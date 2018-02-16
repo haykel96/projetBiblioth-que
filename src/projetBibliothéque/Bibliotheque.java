@@ -82,7 +82,7 @@ public class Bibliotheque implements Serializable
 			String tel = EntreesSorties.lireChaine("Entrez le numero de telephone :");
 			EntreesSorties.afficherMessage("Fin de saisie");
 			
-			L = new Lecteur(nom, prenom, numLecteur, dateNaiss, adresse, tel);
+			L = new Lecteur(numLecteur,nom, prenom, dateNaiss, adresse, tel);
 			lierLecteur(L, numLecteur);
 		}
 		else {
