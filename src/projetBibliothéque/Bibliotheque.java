@@ -9,7 +9,7 @@ import java.util.Iterator;
 public class Bibliotheque implements Serializable 
 {
 	
-	private static final long serialVersionUID = 262L;
+	private static final long serialVersionUID = 262L; /*TEST*/
 
 	// -----------------------------------------------
 		//Attributs
