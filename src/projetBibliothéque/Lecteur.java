@@ -14,12 +14,12 @@ public class Lecteur implements Serializable
 		//Attributs
 	// -----------------------------------------------
 	
-		private String _nom;
-		private String _prenom;
-		private Integer _numLecteur;
-		private GregorianCalendar _dateNaiss;
-		private String _adresse;
-		private String _tel;
+                private Integer numLec;
+		private String nomLec;
+		private String prenomLec;
+		private GregorianCalendar dateNaissance;
+		private String adresse;
+		private String tel;
 	
 	
 	
@@ -27,12 +27,12 @@ public class Lecteur implements Serializable
 		//Constructeur
 	// -----------------------------------------------
 		
-		public Lecteur(String nom, String prenom, Integer numLecteur, GregorianCalendar dateNaiss, String adresse, String tel)
+		public Lecteur(int num,String nom, String prenom, GregorianCalendar dateNaissance, String adresse, String tel)
 		{
-			this.setNom(nom);
-			this.setPrenom(prenom);
-			this.setNumLecteur(numLecteur);
-			this.setDateNaiss(dateNaiss);
+			this.setNom(nomLec);
+			this.setPrenom(prenomLec);
+			this.setNumLecteur(numLec);
+			this.setDateNaissance(dateNaissance);
 			this.setAdresse(adresse);
 			this.setTel(tel);
 		}
@@ -46,27 +46,27 @@ public class Lecteur implements Serializable
 		// -----------------------------------------------
 	
 		public String getNom() {
-			return _nom;
+			return nomLec;
 		}
 
 		public String getPrenom() {
-			return _prenom;
+			return prenomLec;
 		}
 
 		public Integer getNumLecteur() {
-			return _numLecteur;
+			return numLec;
 		}
 		
-		public GregorianCalendar getDateNaiss() {
-			return _dateNaiss;
+		public GregorianCalendar getDateNaissance() {
+			return dateNaissance;
 		}
 
 		public String getAdresse() {
-			return _adresse;
+			return adresse;
 		}
 
 		public String getTel() {
-			return _tel;
+			return tel;
 		}
 		// -----------------------------------------------
 			// Methodes
@@ -87,19 +87,19 @@ public class Lecteur implements Serializable
 		
 		
 		/*
-		 * la m�thode calculAge permet de d�terminer l'age des lecteurs grace a leur date de naissance
-		 * et la date actuelle. De cette fa�on, il n'y a pas de mise a jour a faire sur l'age des lecteurs.
+		 * la m�thode calculAge permet de d�terminer l'dateNaissance des lecteurs grace a leur date de naissance
+		 * et la date actuelle. De cette fa�on, il n'y a pas de mise a jour a faire sur l'dateNaissance des lecteurs.
 		 */
 		public Integer calculAge() {
 			Integer age;
 			GregorianCalendar dateNaissComp;
 			GregorianCalendar dateActuelle = new GregorianCalendar();
-			dateNaissComp = new GregorianCalendar(dateActuelle.get(GregorianCalendar.YEAR), _dateNaiss.get(GregorianCalendar.MONTH), _dateNaiss.get(GregorianCalendar.DATE));
+			dateNaissComp = new GregorianCalendar(dateActuelle.get(GregorianCalendar.YEAR), this.dateNaissance.get(GregorianCalendar.MONTH), this.dateNaissance.get(GregorianCalendar.DATE));
 			if(dateNaissComp.before(dateActuelle)){
-				age=dateActuelle.get(GregorianCalendar.YEAR)-_dateNaiss.get(GregorianCalendar.YEAR);
+				age=dateActuelle.get(GregorianCalendar.YEAR)-this.dateNaissance.get(GregorianCalendar.YEAR);
 			}
 			else{
-				age=dateActuelle.get(GregorianCalendar.YEAR)-_dateNaiss.get(GregorianCalendar.YEAR)-1;
+				age=dateActuelle.get(GregorianCalendar.YEAR)-this.dateNaissance.get(GregorianCalendar.YEAR)-1;
 			}
 			return age;
 		}
@@ -115,27 +115,27 @@ public class Lecteur implements Serializable
 		// -----------------------------------------------
 
 		private void setNom(String nom) {
-			this._nom = nom;
+			this.nomLec = nom;
 		}
 
 		private void setPrenom(String prenom) {
-			this._prenom = prenom;
+			this.prenomLec = prenom;
 		}
 		
 		private void setNumLecteur(Integer numLecteur) {
-			this._numLecteur = numLecteur;
+			this.numLec = numLecteur;
 		}
 
-		private void setDateNaiss(GregorianCalendar dateNaiss) {
-			this._dateNaiss = dateNaiss;
+		private void setDateNaissance(GregorianCalendar dateNaissance) {
+			this.dateNaissance = dateNaissance;
 		}
 
 		private void setAdresse(String adresse) {
-			this._adresse = adresse;
+			this.adresse = adresse;
 		}
 
 		private void setTel(String tel) {
-			this._tel = tel;
+			this.tel = tel;
 		}
 		
 		
